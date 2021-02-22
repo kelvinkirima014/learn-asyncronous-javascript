@@ -18,14 +18,22 @@ const firstMovie = () => {
 
 
 }
-firstMovie()
+
 // let's look at another setTimeout
-//we set it to 0ms but the event loop waits for the
-//stack to clear before the callback can be popped on it again
 const getTown = () => {
     setTimeout(() =>{
         console.log ('this is k-town')
     },0)
 }
+firstMovie()
 getTown()
+// although the setTimeout calls immediate
 console.log('printnt l-town first')
+console.log('1')
+const getNumber = () =>{
+  setTimeout((cb)=>{
+    console.log('2')
+  })
+}
+getNumber()
+console.log('3')
